@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane fx:id="Diyetisyen_panel" prefHeight="564.0" prefWidth="987.0" xmlns="http://javafx.com/javafx/15.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.DiyetisyenPanelController">
+   <children>
+      <AnchorPane prefHeight="565.0" prefWidth="193.0">
+         <children>
+            <Button layoutY="67.0" mnemonicParsing="false" onAction="#DBilgiPaneShow" prefHeight="54.0" prefWidth="193.0" style="-fx-background-color: #1E843D;" text="Hasta Bilgi" textFill="WHITE">
+               <font>
+                  <Font name="Calibri" size="20.0" />
+               </font>
+            </Button>
+            <Button layoutY="133.0" mnemonicParsing="false" onAction="#DBesinDegerPaneShow" prefHeight="54.0" prefWidth="193.0" style="-fx-background-color: #1E843D;" text="Besin Değerleri" textFill="WHITE">
+               <font>
+                  <Font name="Calibri" size="20.0" />
+               </font>
+            </Button>
+            <Button layoutY="198.0" mnemonicParsing="false" onAction="#DRandevuPaneShow" prefHeight="54.0" prefWidth="193.0" style="-fx-background-color: #1E843D;" text="Randevu Bilgi" textFill="WHITE">
+               <font>
+                  <Font name="Calibri" size="20.0" />
+               </font>
+            </Button>
+            <Button mnemonicParsing="false" onAction="#DHastaEklePaneShow" prefHeight="54.0" prefWidth="193.0" style="-fx-background-color: #1E843D;" text="Hasta Ekle" textFill="WHITE" AnchorPane.topAnchor="0.0">
+               <font>
+                  <Font name="Calibri" size="20.0" />
+               </font>
+            </Button>
+         </children>
+      </AnchorPane>
+      <AnchorPane fx:id="D_pane_bilgi" layoutX="193.0" layoutY="1.0" prefHeight="564.0" prefWidth="794.0">
+         <children>
+            <TableView fx:id="D_tableview_hasta_bilgi" layoutY="55.0" onMouseClicked="#get" prefHeight="286.0" prefWidth="794.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
+              <columns>
+                <TableColumn fx:id="D_tableview_bilgi_id" prefWidth="75.0" text="Hasta Id" />
+                <TableColumn fx:id="D_tableview_bilgi_ad" prefWidth="75.0" text="Ad" />
+                  <TableColumn fx:id="D_tableview_bilgi_soyad" prefWidth="75.0" text="Soyad" />
+                  <TableColumn fx:id="D_tableview_bilgi_dogum" prefWidth="118.0" text="Doğum Tarihi" />
+                  <TableColumn fx:id="D_tableview_bilgi_boy" prefWidth="67.0" text="Boy" />
+                  <TableColumn fx:id="D_tableview_bilgi_kilo" prefWidth="78.0" text="Kilo" />
+                  <TableColumn fx:id="D_tableview_bilgi_cinsiyet" prefWidth="75.0" text="Cinsiyet" />
+                  <TableColumn fx:id="D_tableview_bilgi_tel" prefWidth="75.0" text="Telefon" />
+              </columns>
+            </TableView>
+            <TextField fx:id="D_txt_id" layoutX="14.0" layoutY="359.0" prefHeight="28.0" prefWidth="151.0" promptText="Hasta Id" />
+            <Button fx:id="D_btn_bilgi_ekle" layoutX="87.0" layoutY="491.0" mnemonicParsing="false" onAction="#D_KullaniciEkle" prefHeight="42.0" prefWidth="166.0" style="-fx-background-color: #0B5347;" text="EKLE" textFill="WHITE">
+               <font>
+                  <Font name="Calibri" size="20.0" />
+               </font>
+            </Button>
+            <Button fx:id="D_btn_bilgi_sil" layoutX="281.0" layoutY="491.0" mnemonicParsing="false" onAction="#Delete" prefHeight="42.0" prefWidth="166.0" style="-fx-background-color: #0B5347;" text="SİL" textFill="WHITE">
+               <font>
+                  <Font name="Calibri" size="20.0" />
+               </font>
+            </Button>
+            <Button fx:id="D_btn_bilgi_guncelle" layoutX="480.0" layoutY="491.0" mnemonicParsing="false" onAction="#Edit" prefHeight="42.0" prefWidth="166.0" style="-fx-background-color: #0B5347;" text="GÜNCELLE" textFill="WHITE">
+               <font>
+                  <Font name="Calibri" size="20.0" />
+               </font>
+            </Button>
+            <TextField fx:id="D_txt_boy" layoutX="14.0" layoutY="396.0" prefHeight="28.0" prefWidth="151.0" promptText="Boy" />
+            <TextField fx:id="D_txt_soyad" layoutX="397.0" layoutY="359.0" prefHeight="28.0" prefWidth="151.0" promptText="Hasta Soyadı" />
+            <TextField fx:id="D_txt_ad" layoutX="207.0" layoutY="359.0" prefHeight="28.0" prefWidth="151.0" promptText="Hasta Adı" />
+            <TextField fx:id="D_txt_kilo" layoutX="207.0" layoutY="396.0" prefHeight="28.0" prefWidth="151.0" promptText="Kilo" />
+            <TextField fx:id="D_txt_cinsiyet" layoutX="397.0" layoutY="396.0" prefHeight="28.0" prefWidth="151.0" promptText="Cinsiyet" />
+            <TextField fx:id="D_txt_dogum" layoutX="590.0" layoutY="359.0" prefHeight="28.0" prefWidth="151.0" promptText="Hasta Doğum Tarihi" />
+            <TextField fx:id="D_txt_telefon" layoutX="590.0" layoutY="396.0" prefHeight="28.0" prefWidth="151.0" promptText="Telefon" />
+            <TextField fx:id="filterField_bilgi" layoutX="241.0" layoutY="8.0" prefHeight="36.0" prefWidth="193.0" promptText="Ara..." />
+         </children></AnchorPane>
+      <AnchorPane fx:id="D_pane_besin_deger" layoutX="193.0" layoutY="1.0" prefHeight="564.0" prefWidth="794.0" visible="false">
+         <children>
+            <TableView fx:id="D_tableview_besindeger" layoutY="55.0" prefHeight="515.0" prefWidth="794.0">
+              <columns>
+                <TableColumn fx:id="D_tableview_besinid" prefWidth="75.0" text="Besin Id" />
+                <TableColumn fx:id="D_tableview_besinadi" prefWidth="123.0" text="Besin Adı" />
+                  <TableColumn fx:id="D_tableview_kalori" prefWidth="92.0" text="Kalori" />
+                  <TableColumn fx:id="D_tableview_protein" prefWidth="75.0" text="Protein" />
+                  <TableColumn fx:id="D_tableview_karbonhidrat" prefWidth="92.0" text="Karbonhidrat" />
+                  <TableColumn fx:id="D_tableview_yag" prefWidth="81.0" text="Yağ" />
+              </columns>
+            </TableView>
+            <TextField fx:id="filterField_menu1" layoutX="241.0" layoutY="8.0" prefHeight="36.0" prefWidth="193.0" promptText="Ara..." />
+         </children></AnchorPane>
+      <AnchorPane fx:id="D_pane_randevu" layoutX="193.0" layoutY="1.0" prefHeight="564.0" prefWidth="794.0" visible="false">
+         <children>
+            <TableView fx:id="D_tableview_randevu" layoutY="55.0" onMouseClicked="#get3" prefHeight="286.0" prefWidth="794.0">
+              <columns>
+                <TableColumn fx:id="D_tableview_randevu_randevuId" prefWidth="116.0" text="Randevu Id" />
+                <TableColumn fx:id="D_tableview_randevu_hastaId" prefWidth="253.0" text="Hasta Id" />
+                  <TableColumn fx:id="D_tableview_randevu_DiyetisyenId" prefWidth="256.0" text="Diyetisyen Id" />
+                  <TableColumn fx:id="D_tableview_randevu_tarih" prefWidth="168.0" text="Tarih Saat" />
+              </columns>
+            </TableView>
+            <Button fx:id="D_btn_randevu_ekle" layoutX="87.0" layoutY="491.0" mnemonicParsing="false" onAction="#D_RandevuEkle" prefHeight="42.0" prefWidth="166.0" style="-fx-background-color: #0B5347;" text="EKLE" textFill="WHITE">
+               <font>
+                  <Font name="Calibri" size="20.0" />
+               </font>
+            </Button>
+            <Button fx:id="D_btn_randevu_sil" layoutX="281.0" layoutY="491.0" mnemonicParsing="false" onAction="#RandevuDelete" prefHeight="42.0" prefWidth="166.0" style="-fx-background-color: #0B5347;" text="SİL" textFill="WHITE">
+               <font>
+                  <Font name="Calibri" size="20.0" />
+               </font>
+            </Button>
+            <Button fx:id="D_btn_randevu_guncelle" layoutX="480.0" layoutY="491.0" mnemonicParsing="false" onAction="#RandevuEdit" prefHeight="42.0" prefWidth="166.0" style="-fx-background-color: #0B5347;" text="GÜNCELLE" textFill="WHITE">
+               <font>
+                  <Font name="Calibri" size="20.0" />
+               </font>
+            </Button>
+            <TextField fx:id="D_txt_randevu_randevuId" layoutX="17.0" layoutY="372.0" prefHeight="28.0" prefWidth="151.0" promptText="Randevu Id" />
+            <TextField fx:id="D_txt_randevu_hastaId" layoutX="206.0" layoutY="372.0" prefHeight="28.0" prefWidth="151.0" promptText="Hasta Id" />
+            <TextField fx:id="D_txt_randevu_diyetisyenId" layoutX="405.0" layoutY="372.0" prefHeight="28.0" prefWidth="151.0" promptText="Diyetisyen Id" />
+            <DatePicker fx:id="date_randevu" layoutX="583.0" layoutY="373.0" />
+         </children>
+      </AnchorPane>
+      <AnchorPane fx:id="D_pane_hasta_ekle" layoutX="193.0" layoutY="4.0" prefHeight="564.0" prefWidth="794.0" visible="false">
+         <children>
+            <TableView fx:id="D_tableview_hasta_bilgi1" layoutY="55.0" onMouseClicked="#get2" prefHeight="286.0" prefWidth="794.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
+               <columns>
+                  <TableColumn fx:id="D_tableview_bilgi_id1" prefWidth="141.0" text="Hasta Id" />
+                  <TableColumn fx:id="D_tableview_hasta_Tc" prefWidth="231.0" text="Tc" />
+               </columns>
+            </TableView>
+            <TextField fx:id="D_txt_id1" layoutX="14.0" layoutY="359.0" prefHeight="28.0" prefWidth="151.0" promptText="Hasta Id" />
+            <Button fx:id="D_btn_bilgi_ekle1" layoutX="87.0" layoutY="491.0" mnemonicParsing="false" onAction="#D_KullaniciEkle" prefHeight="42.0" prefWidth="166.0" style="-fx-background-color: #0B5347;" text="EKLE" textFill="WHITE">
+               <font>
+                  <Font name="Calibri" size="20.0" />
+               </font>
+            </Button>
+            <TextField fx:id="D_txt_boy1" layoutX="14.0" layoutY="396.0" prefHeight="28.0" prefWidth="151.0" promptText="Boy" />
+            <TextField fx:id="D_txt_soyad1" layoutX="397.0" layoutY="359.0" prefHeight="28.0" prefWidth="151.0" promptText="Hasta Soyadı" />
+            <TextField fx:id="D_txt_ad1" layoutX="207.0" layoutY="359.0" prefHeight="28.0" prefWidth="151.0" promptText="Hasta Adı" />
+            <TextField fx:id="D_txt_kilo1" layoutX="207.0" layoutY="396.0" prefHeight="28.0" prefWidth="151.0" promptText="Kilo" />
+            <TextField fx:id="D_txt_cinsiyet1" layoutX="397.0" layoutY="396.0" prefHeight="28.0" prefWidth="151.0" promptText="Cinsiyet" />
+            <TextField fx:id="D_txt_telefon1" layoutX="590.0" layoutY="396.0" prefHeight="28.0" prefWidth="151.0" promptText="Telefon" />
+            <TextField fx:id="D_txt_tc" layoutX="14.0" layoutY="437.0" prefHeight="28.0" prefWidth="151.0" promptText="Hasta Tc" />
+            <DatePicker fx:id="date" layoutX="579.0" layoutY="361.0" />
+         </children>
+      </AnchorPane>
+   </children>
+</AnchorPane>
